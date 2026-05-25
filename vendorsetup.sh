@@ -45,13 +45,13 @@ get-microg-components() {
 }
 
 get-droidify-components() {
-    local droidify_repo="https://github.com/Droid-ify/client"
+    local fdroid_repo="https://f-droid.org/repo"
     local name versioncode apk_to_download
 
     # Droidify
     name="Droidify"
     versioncode=$(cat "$name"/.version_code)
-    apk_to_download="$droidify_repo"/releases/download/"$versioncode"/app-release.apk
+    apk_to_download="$fdroid_repo/com.looker.droidify_$versioncode.apk"
     download_apk "$apk_to_download" "$name"
 }
 
