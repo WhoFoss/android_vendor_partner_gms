@@ -1,3 +1,4 @@
+```bash
 #!/bin/bash
 
 # be strict on failures
@@ -44,10 +45,23 @@ get-microg-components() {
     download_apk "$apk_to_download" "$name"
 }
 
+get-droidify-components() {
+    local droidify_repo="https://github.com/Droid-ify/client"
+    local name versioncode apk_to_download
+
+    # Droidify
+    name="Droidify"
+    versioncode=$(cat "$name"/.version_code)
+    apk_to_download="$droidify_repo"/releases/download/"$versioncode"/app-release.apk
+    download_apk "$apk_to_download" "$name"
+}
+
 # This script is called from the root directory, so we need to cd
 cd vendor/partner_gms
 get-microg-components
+get-droidify-components
 # and back to the root directory
 cd ../..
 
 set +e
+```
