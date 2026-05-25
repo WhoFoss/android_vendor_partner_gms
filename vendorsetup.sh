@@ -1,4 +1,3 @@
-```bash
 #!/bin/bash
 
 # be strict on failures
@@ -64,4 +63,3 @@ get-droidify-components
 cd ../..
 
 set +e
-```
