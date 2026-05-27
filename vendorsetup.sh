@@ -55,10 +55,22 @@ get-droidify-components() {
     download_apk "$apk_to_download" "$name"
 }
 
+get-aurora-components() {
+    local fdroid_repo="https://f-droid.org/repo"
+    local name versioncode apk_to_download
+
+    # AuroraStore
+    name="AuroraStore"
+    versioncode=$(cat "$name"/.version_code)
+    apk_to_download="$fdroid_repo/com.aurora.store_$versioncode.apk"
+    download_apk "$apk_to_download" "$name"
+}
+
 # This script is called from the root directory, so we need to cd
 cd vendor/partner_gms
 get-microg-components
 get-droidify-components
+get-aurora-components
 # and back to the root directory
 cd ../..
 
