@@ -2,4 +2,6 @@ PRODUCT_PACKAGES += \
     GmsCore \
     GsfProxy \
     FakeStore \
-    Droidify
+    Droidify \
+    AuroraStore \
+    AuroraServices
